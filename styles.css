@@ -1,0 +1,264 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  font-family: "Montserrat", sans-serif;
+}
+p {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+body {
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+}
+
+.list{
+  position: absolute;
+  width: 420px;
+  height: 0px;
+  top: 0;
+  left: 50%;
+  z-index: 99;
+  background-color: red;
+  transform: translate(-50%);
+  border-radius: 0 0 10px 10px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(139, 139, 139, 0.25);
+  transition: height 0.2s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.song{
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+.song-info{
+  flex-grow: 1;
+}
+
+.list-img{
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.list-text{
+  font-size: 14px;
+  text-align: left;
+}
+
+.link img {
+  height: 25px;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://i.scdn.co/image/ab67616d00001e02c07d5d2fdc02ae252fcd07e5");
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+}
+
+.player-wrapper,
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 20px;
+}
+
+#cover {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.info{
+    gap:10px;
+}
+
+.artist{
+    color:#999999 ;
+}
+
+.title, .artist {
+  font-weight: bold;
+}
+
+#current, #remain{
+  width: 60px;
+}
+
+.bar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.range-bar{
+    -webkit-appearance: none;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.range-bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    box-shadow: -405px 0 0 400px #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 10px;
+  outline: none;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(139, 139, 139, 0.25);
+ 
+}
+
+
+ #progress-bar::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+button svg{
+    width: 24px;
+    height: 24px;
+}
+
+button:hover svg{
+    width: 28px;
+    height: 28px;
+}
+
+button:active svg{
+    width: 24px;
+    height: 24px;
+}
+
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume-container{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.volume-bar-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, -35px);
+    height: 0px;
+    width: 30px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(139, 139, 139, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+}
+
+.volume-bar-container:hover{
+    height: 110px;
+}
+
+#volme-control{
+    position: absolute;
+    left: -46px;
+    bottom: 40px;
+    height: 30px;
+    width: 120px;
+    transform: rotate(-90deg);
+    background: none;
+}
+
+#volme-control::-webkit-slider-thumb {
+    height: 10px;
+    width: 1px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+#player{
+  display: none;
+}
+
+.name{
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%);
+}
